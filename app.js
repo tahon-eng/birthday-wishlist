@@ -139,10 +139,10 @@ function renderGift(gift, index) {
   if ((!reserved || repeatable) && !gift.presetName || connected && repeatable) {
     const button = element('button', `gift-reserve ${repeatable && reserved ? 'repeatable-action' : ''}`);
     button.type = 'button';
-    button.disabled = !connected || mine;
-    button.append(element('span', '', !connected ? 'Бронювання недоступне' : mine ? 'Ти вже забронював/-ла ✓' : repeatable && reserved ? 'Я теж подарую' : 'Забронювати'));
-    if (connected && !mine) button.append(element('span', 'button-arrow', '↗'));
-    button.setAttribute('aria-label', `${mine ? 'Власна бронь' : 'Забронювати'}: ${gift.title}`);
+    button.disabled = !connected || (!repeatable && mine);
+    button.append(element('span', '', !connected ? 'Бронювання недоступне' : repeatable && reserved ? 'Додати бронювання' : mine ? 'Ти вже забронював/-ла ✓' : 'Забронювати'));
+    if (connected && (repeatable || !mine)) button.append(element('span', 'button-arrow', '↗'));
+    button.setAttribute('aria-label', `Забронювати: ${gift.title}`);
     button.addEventListener('click', () => openReservation(gift, button));
     action.append(button);
   } else if (!connected || !reserved) {
@@ -215,13 +215,13 @@ function openDialog(gift, invoker) {
 }
 
 function openReservation(gift, invoker) {
-  if (!connected || !canReserve(gift) || ownReservations(gift).length > 0) return;
+  if (!connected || !canReserve(gift) || (!isRepeatable(gift) && ownReservations(gift).length > 0)) return;
   mode = 'reserve';
   selectedReservation = undefined;
   document.querySelector('#dialog-icon').textContent = '♡';
   document.querySelector('#dialog-eyebrow').textContent = 'ЦЕЙ ПОДАРУНОК — ВІД ТЕБЕ';
   document.querySelector('#dialog-title').textContent = 'Бронюємо?';
-  document.querySelector('#dialog-description').textContent = `${gift.title}${isRepeatable(gift) ? '\nЦей подарунок можуть обрати кілька гостей. Твоя бронь буде окремою.' : '\nЗалиш ім’я — інші побачать, що подарунок уже зайнятий.'}`;
+  document.querySelector('#dialog-description').textContent = `${gift.title}${isRepeatable(gift) ? '\nМожна додати кілька бронювань на різні імена, навіть із цього ж браузера. Кожна бронь окрема — подарунок залишається доступним іншим.' : '\nЗалиш ім’я — інші побачать, що подарунок уже зайнятий.'}`;
   document.querySelector('#name-field').hidden = false;
   nameInput.disabled = false;
   nameInput.value = '';
@@ -317,7 +317,7 @@ form.addEventListener('submit', async (event) => {
     if (!connected) {
       submit.disabled = true;
       dialogError.textContent += ' Зараз немає з’єднання. Закрий вікно й натисни «Спробувати ще раз» над подарунками.';
-    } else if (actionMode === 'reserve' && (!canReserve(selectedGift) || ownReservations(selectedGift).length > 0)) {
+    } else if (actionMode === 'reserve' && (!canReserve(selectedGift) || (!isRepeatable(selectedGift) && ownReservations(selectedGift).length > 0))) {
       submit.disabled = true;
     }
   }

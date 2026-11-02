@@ -9,7 +9,7 @@ Buildless HTML, CSS and JavaScript on GitHub Pages, backed by a dedicated free S
 - Twelve gift ideas in Ukrainian, with original illustrations and labelled store search links.
 - Names and reservation statuses are public. No guest email, telephone or registration is requested.
 - One reservation per physical gift, enforced by a database unique constraint even during simultaneous requests.
-- Sunglasses certificates, store gift cards and cash can be chosen by several guests; each browser can choose each gift once.
+- Sunglasses certificates, store gift cards and cash allow several independent reservations, including multiple names from the same browser. They stay available after a reservation; physical gifts still allow only one booking.
 - Oleg's car phone holder reservation is preloaded and cannot be cancelled by other visitors.
 - Visitors can cancel their own reservation in the original browser. Clearing site data, private browsing or moving to another device loses that ability. The owner can manage reservations in Supabase Table Editor.
 - Status refreshes while the tab is visible, every 15 seconds and when the browser regains focus. Writes always reach the database directly.
@@ -29,4 +29,4 @@ The invitation page is public and guest-entered names are not verified identitie
 
 ## Verification completed
 
-Live API checks: public catalogue and reservation reads; protected ownership hashes; rejection of missing, malformed and mismatched secrets; simultaneous unique reservation; owner cancellation; outsider cancellation rejected; UPDATE rejected; repeatable gifts; duplicate own booking rejected; Oleg protection. Temporary test reservations were removed. Browser flow: create reservation, reload, cancel own reservation.
+Live API checks: public catalogue and reservation reads; protected ownership hashes; rejection of missing, malformed and mismatched secrets; simultaneous unique reservation; owner cancellation; outsider cancellation rejected; UPDATE rejected; repeatable gifts; Oleg protection. Temporary test reservations were removed. Browser flow: create reservation, reload, cancel own reservation.

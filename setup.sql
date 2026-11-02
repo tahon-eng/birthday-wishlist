@@ -33,9 +33,13 @@ create table if not exists public.wishlist_reservations (
     and name !~ '[[:cntrl:]]'
   ),
   constraint wishlist_reservations_token check (token_hash ~ '^[0-9a-f]{64}$'),
-  constraint wishlist_one_reservation_per_gift unique (gift_id, slot),
-  constraint wishlist_one_reservation_per_browser unique (gift_id, token_hash)
+  constraint wishlist_one_reservation_per_gift unique (gift_id, slot)
 );
+
+-- Certificates and cash allow several independent bookings, including when a
+-- family uses one browser. The unique slot still permits only one physical gift.
+alter table public.wishlist_reservations
+  drop constraint if exists wishlist_one_reservation_per_browser;
 
 -- The browser generates 32 random bytes and sends their 64-character lowercase
 -- hex encoding in x-wishlist-token. It submits SHA-256(UTF8(hex)) as token_hash.
@@ -149,4 +153,3 @@ commit;
 -- SELECT * and selecting token_hash are deliberately forbidden.
 -- Guests enter display names, not verified identities. This small public list
 -- does not provide rate limiting; keep the invitation link within your circle.
-
