@@ -62,6 +62,16 @@ $function$;
 revoke all on function public.wishlist_request_token_hash() from public;
 grant execute on function public.wishlist_request_token_hash() to anon, authenticated;
 
+-- Supabase's automatic-RLS option creates this administrative event-trigger
+-- function in public. It is not a guest API and needs no guest EXECUTE grant.
+do $admin_rls$
+begin
+  if pg_catalog.to_regprocedure('public.rls_auto_enable()') is not null then
+    revoke execute on function public.rls_auto_enable() from public, anon, authenticated;
+  end if;
+end;
+$admin_rls$;
+
 alter table public.wishlist_gifts enable row level security;
 alter table public.wishlist_reservations enable row level security;
 
@@ -139,3 +149,4 @@ commit;
 -- SELECT * and selecting token_hash are deliberately forbidden.
 -- Guests enter display names, not verified identities. This small public list
 -- does not provide rate limiting; keep the invitation link within your circle.
+
