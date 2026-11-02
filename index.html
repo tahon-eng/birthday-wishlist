@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4eb">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://dhfmqhtnnbzarbwrllhl.supabase.co; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="description" content="Вішліст до дня народження. Обирай подарунок, бронюй на своє ім’я — і нехай усі сюрпризи будуть вдалими.">
+  <title>Трохи бажань — вішліст до дня народження</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23273e34'/%3E%3Cpath d='M15 27h34v23H15zM12 21h40v10H12z' fill='%23eea66e'/%3E%3Cpath d='M29 21h6v29h-6z' fill='%23f8eedb'/%3E%3Cpath d='M32 21c-17 0-14-17-5-10l5 10c0-18 17-16 12-6-2 4-7 6-12 6' fill='none' stroke='%23f8eedb' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#gifts">До подарунків</a>
+  <header class="site-header page-width">
+    <a class="wordmark" href="#" aria-label="Вішліст, на початок">
+      <svg width="27" height="29" viewBox="0 0 28 30" fill="none" aria-hidden="true"><path d="M4 13h20v13H4zM2 8h24v7H2z" stroke="currentColor" stroke-width="1.7"/><path d="M14 8v18M14 8C3 8 6-2 11 3l3 5Zm0 0c0-11 10-8 7-3-1 2-4 3-7 3Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>трохи бажань<span class="wordmark-dot">.</span></span>
+    </a>
+    <a class="header-link" href="#gifts">Обрати подарунок <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero page-width" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-spark" aria-hidden="true">✳</span> ВІШЛІСТ ДО ДНЯ НАРОДЖЕННЯ</p>
+        <h1 id="page-title">Трохи бажань.<br><em>Багато радості.</em></h1>
+        <p class="hero-intro">Вішліст за численними проханнями 😁<br>Якщо є змога, обирайте з нього. Пропозиції також приймаються в особисті, якщо у когось є ідея краще.</p>
+        <a class="button button-primary hero-cta" href="#gifts">Знайти той самий подарунок <span aria-hidden="true">↓</span></a>
+        <p class="hero-footnote">Головне — побачитися. А тут просто підказки.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span class="art-caption">good things<br>are coming</span>
+        <svg class="hero-illustration" viewBox="0 0 500 430" fill="none">
+          <ellipse cx="261" cy="371" rx="161" ry="17" fill="#263e34" opacity=".08"/>
+          <path d="M118 82l7 12m-16-1 16-3m231 24 8 10m-17-4 16-5M116 283l-9 11m-2-10 15 8" stroke="#c16c43" stroke-width="3" stroke-linecap="round"/>
+          <path d="m374 258 6 8 10-3-5 9 6 8-10-2-6 8-1-10-10-4 10-3z" fill="#263e34"/>
+          <circle cx="96" cy="183" r="5" fill="#c16c43"/><circle cx="391" cy="188" r="4" fill="#263e34"/>
+          <g transform="rotate(-9 252 263)">
+            <path d="M143 210h219v148c-71 8-146 8-219 0V210Z" fill="#c9754f" stroke="#263e34" stroke-width="2.6"/>
+            <path d="M143 210h219v25H143z" fill="#9f563c" opacity=".25"/>
+            <path d="M235 209h38v153h-38z" fill="#f8e9c8" stroke="#263e34" stroke-width="2.6"/>
+            <path d="M130 184c83-6 166-6 247 0v41H130v-41Z" fill="#e99b70" stroke="#263e34" stroke-width="2.6"/>
+            <path d="M233 182h40v44h-40z" fill="#f8e9c8" stroke="#263e34" stroke-width="2.6"/>
+            <path d="M252 182c-69 0-109-27-84-49 19-17 58 3 84 49Z" fill="#f8e9c8" stroke="#263e34" stroke-width="2.6"/>
+            <path d="M252 182c64-5 103-37 75-59-24-17-53 14-75 59Z" fill="#f8e9c8" stroke="#263e34" stroke-width="2.6"/>
+            <path d="M252 181c-18-32-47-42-65-39m65 39c17-31 37-44 58-46" stroke="#263e34" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M300 254c10-4 25-2 29 10l-9 34-31-8 5-29 6-7Z" fill="#f7f0dd" stroke="#263e34" stroke-width="2"/>
+            <path d="M304 258c-4-15-19-17-30-13" stroke="#263e34" stroke-width="2"/>
+            <path d="m301 274 6 6 12-11" stroke="#263e34" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <g transform="rotate(12 357 77)">
+            <path d="M348 69c-28-16-7-42 7-20 3-29 34-19 22 5 26-4 31 24 3 27 18 21-6 40-21 17-10 27-38 16-26-6-29-4-24-31 4-25Z" fill="#e1c577" stroke="#263e34" stroke-width="2.3"/>
+            <circle cx="356" cy="74" r="18" fill="#f5ebce" stroke="#263e34" stroke-width="2"/>
+            <circle cx="350" cy="72" r="1.6" fill="#263e34"/><circle cx="362" cy="72" r="1.6" fill="#263e34"/>
+            <path d="M350 80c4 4 9 4 12-1" stroke="#263e34" stroke-width="1.8" stroke-linecap="round"/>
+          </g>
+          <path d="m147 352-24 7m13 11-13-11 8-12" stroke="#263e34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="art-note">з любов’ю<br>і без дублів ♡</span>
+      </div>
+    </section>
+
+    <section class="how-it-works page-width" aria-label="Як це працює">
+      <p><span class="step-number">01</span><span>Обирай те,<br><strong>що до душі</strong></span></p>
+      <span class="step-arrow" aria-hidden="true">→</span>
+      <p><span class="step-number">02</span><span>Бронюй подарунок<br><strong>на своє ім’я</strong></span></p>
+      <span class="step-arrow" aria-hidden="true">→</span>
+      <p><span class="step-number">03</span><span>Інші бачать бронь.<br><strong>Усі сюрпризи вдалі!</strong></span></p>
+    </section>
+
+    <section class="wishlist-section page-width" id="gifts" aria-labelledby="gifts-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">ОСЬ І ВСІ ПІДКАЗКИ</p><h2 id="gifts-title">Маленькі великі бажання<span class="heading-star" aria-hidden="true">✳</span></h2></div>
+        <p class="gift-total">12 ідей для радості</p>
+      </div>
+      <div class="wishlist-toolbar">
+        <div class="filters" role="group" aria-label="Показати подарунки">
+          <button class="filter-button active" data-filter="all" aria-pressed="true">Усі <span data-count="all">12</span></button>
+          <button class="filter-button" data-filter="free" aria-pressed="false">Можна обрати <span data-count="free">—</span></button>
+          <button class="filter-button" data-filter="reserved" aria-pressed="false">Заброньовано <span data-count="reserved">—</span></button>
+        </div>
+        <p class="connection-status" id="connection-status" role="status"><span class="status-dot pending"></span><span>Підключаємо список…</span></p>
+      </div>
+      <div class="connection-alert" id="connection-alert" hidden>
+        <div><strong>Не вдалося підключити бронювання.</strong><p id="connection-error-text">Подарунки можна переглянути. Щоб перевірити актуальні броні, спробуй підключитися ще раз.</p></div>
+        <button class="button button-outline" id="retry-connection" type="button">Спробувати ще раз <span aria-hidden="true">↻</span></button>
+      </div>
+      <div class="gift-grid" id="gift-grid" aria-busy="true"></div>
+      <p class="empty-state" id="empty-state" hidden></p>
+      <noscript><p class="noscript-message">Для спільного бронювання потрібен JavaScript. Увімкни його в браузері та онови сторінку.</p></noscript>
+      <p class="reservation-note"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg> Скасувати можна лише власну бронь у цьому браузері. Не очищуй його дані, якщо хочеш зберегти цю можливість.</p>
+    </section>
+
+    <aside class="car-note page-width" aria-labelledby="car-title">
+      <div class="car-note-icon" aria-hidden="true"><svg viewBox="0 0 104 73" fill="none"><path d="m22 34 9-20h40l13 20M12 35h75l7 10v16H10V45l2-10Z" fill="#e5bf77" stroke="#efe7d3" stroke-width="2.5" stroke-linejoin="round"/><path d="M35 18h15v15H28l7-15Zm20 0h13l9 15H55V18Z" fill="#294c3d"/><circle cx="29" cy="60" r="9" fill="#294c3d" stroke="#efe7d3" stroke-width="3"/><circle cx="76" cy="60" r="9" fill="#294c3d" stroke="#efe7d3" stroke-width="3"/><path d="M14 44h12m54 0h10" stroke="#294c3d" stroke-width="4" stroke-linecap="round"/><path d="m87 13 4-7m2 13 7-2" stroke="#efe7d3" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <div><p class="eyebrow">І ЩЕ ОДИН МАЛЕНЬКИЙ НАТЯК</p><h2 id="car-title">Скоро в мене буде машина 🚘</h2><p>Тому усілякі прікалюхи в моє майбутнє авто вітаються.<br>Маєш класну ідею? Пиши в особисті — домовимось!</p></div>
+      <span class="car-note-doodle" aria-hidden="true">beep<br>beep!</span>
+    </aside>
+  </main>
+
+  <footer class="site-footer page-width"><p>Дякую, що ви є. Це вже подарунок <span aria-hidden="true">♡</span></p><a href="#">Нагору ↑</a></footer>
+
+  <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+    <button class="dialog-close" id="dialog-close" type="button" aria-label="Закрити"><span aria-hidden="true">×</span></button>
+    <div class="dialog-icon" id="dialog-icon" aria-hidden="true">♡</div>
+    <p class="eyebrow" id="dialog-eyebrow">ЦЕЙ ПОДАРУНОК — ВІД ТЕБЕ</p>
+    <h2 id="dialog-title">Бронюємо?</h2>
+    <p id="dialog-description"></p>
+    <form id="booking-form">
+      <div id="name-field"><label for="guest-name">Твоє ім’я</label><input id="guest-name" name="guest-name" type="text" autocomplete="name" minlength="2" maxlength="60" placeholder="Щоб усі знали, від кого сюрприз" required aria-describedby="name-help"><p class="field-help" id="name-help">Ім’я бачитимуть усі гості. Без телефону та пошти.</p></div>
+      <p class="dialog-error" id="dialog-error" role="alert" hidden></p>
+      <button class="button button-primary dialog-submit" id="dialog-submit" type="submit">Так, беру на себе <span aria-hidden="true">↗</span></button>
+      <button class="dialog-secondary" id="dialog-secondary" type="button">Ще подумаю</button>
+    </form>
+  </dialog>
+  <div class="toast-region" id="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
